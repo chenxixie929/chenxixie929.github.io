@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<!--
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  GITHUB PAGES DEPLOYMENT                                    ║
+  ║                                                              ║
+  ║  File structure required:                                    ║
+  ║  ├── index.html          ← this file (upload to root)       ║
+  ║  └── Assets/                                                 ║
+  ║       └── ProfilePic.jpeg ← your profile photo here         ║
+  ║                                                              ║
+  ║  Repository name must be:  username.github.io               ║
+  ║  Settings → Pages → Source: Deploy from Branch → Main /root ║
+  ╚══════════════════════════════════════════════════════════════╝
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chenxi Xie — Personal Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Great+Vibes&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --rose:     #f2c4ce;
+      --blush:    #fde8ee;
+      --lavender: #e8e0f5;
+      --sage:     #d4e8df;
+      --cream:    #fdf8f2;
+      --peach:    #fce8d5;
+      --text:     #3a3040;
+      --muted:    #7a6e80;
+      --accent:   #c585a0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ─── HERO ─────────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      background: linear-gradient(135deg, #fde8ee 0%, #ede5f7 35%, #d4e8df 70%, #fce8d5 100%);
+      padding: 4rem 2rem;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 20% 30%, rgba(242,196,206,0.55) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 60% at 80% 70%, rgba(212,232,223,0.50) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 60% 20%, rgba(232,224,245,0.60) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    /* floating blobs */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: 0.35;
+      animation: float 8s ease-in-out infinite;
+    }
+    .blob1 { width: 320px; height: 320px; background: var(--rose);    top: -80px;  left: -80px;  animation-delay: 0s; }
+    .blob2 { width: 260px; height: 260px; background: var(--lavender);bottom: -60px; right: -60px; animation-delay: 3s; }
+    .blob3 { width: 180px; height: 180px; background: var(--sage);    top: 40%;   right: 10%;  animation-delay: 1.5s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50%       { transform: translateY(-20px) scale(1.04); }
+    }
+
+    .hero-tag {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.3rem;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      margin-bottom: 0.5rem;
+      opacity: 0;
+      text-align: center;
+      width: 100%;
+      animation: fadeUp 0.8s 0.2s forwards;
+    }
+
+    .hero h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(4rem, 10vw, 8rem);
+      color: var(--text);
+      line-height: 1.1;
+      opacity: 0;
+      text-align: center;
+      width: 100%;
+      animation: fadeUp 0.9s 0.4s forwards;
+    }
+
+    .hero-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-style: italic;
+      color: var(--muted);
+      margin-top: 1rem;
+      letter-spacing: 0.06em;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.65s forwards;
+    }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      justify-content: center;
+      margin-top: 1.8rem;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.9s forwards;
+    }
+
+    .pill {
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(197,133,160,0.25);
+      border-radius: 999px;
+      padding: 0.45rem 1.1rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.03em;
+    }
+
+    .contact-row {
+      margin-top: 2.2rem;
+      display: flex;
+      gap: 1.4rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      opacity: 0;
+      animation: fadeUp 0.9s 1.1s forwards;
+    }
+
+    .contact-row a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px dashed var(--rose);
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .contact-row a:hover { color: #a3607d; border-color: #a3607d; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+
+    /* ─── GLASS FEATURED APP CARD ───────────────────────── */
+    .featured-app-card {
+      position: relative;
+      z-index: 2;
+      width: min(720px, 92vw);
+      margin-top: 2.6rem;
+      padding: 1.7rem 1.9rem;
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.36);
+      border: 1px solid rgba(255, 255, 255, 0.62);
+      box-shadow:
+        0 20px 60px rgba(197, 133, 160, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.55);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      overflow: hidden;
+      opacity: 0;
+      animation: fadeUp 0.9s 1.25s forwards;
+    }
+
+    .featured-app-card::before {
+      content: '';
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      top: -100px;
+      right: -80px;
+      background: radial-gradient(circle, rgba(255,255,255,0.75), rgba(242,196,206,0.16) 58%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .featured-app-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.28), transparent 45%, rgba(212,232,223,0.18));
+      pointer-events: none;
+    }
+
+    .featured-app-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .featured-app-kicker {
+      font-size: 0.7rem;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.65rem;
+    }
+
+    .featured-app-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.65rem, 4vw, 2.25rem);
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.65rem;
+    }
+
+    .featured-app-desc {
+      max-width: 560px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.75;
+    }
+
+    .featured-app-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 1.35rem;
+    }
+
+    .featured-app-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 0.82rem 1.45rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: white;
+      background: linear-gradient(135deg, #c585a0, #8e7ab8);
+      box-shadow: 0 12px 30px rgba(197, 133, 160, 0.32);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .featured-app-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 40px rgba(197, 133, 160, 0.42);
+    }
+
+    .featured-app-tags {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 1.1rem;
+    }
+
+    .featured-app-tag {
+      border-radius: 999px;
+      padding: 0.32rem 0.72rem;
+      font-size: 0.72rem;
+      color: var(--muted);
+      background: rgba(255,255,255,0.48);
+      border: 1px solid rgba(255,255,255,0.56);
+    }
+
+    /* ─── PROFILE PHOTO ────────────────────────────────── */
+    .profile-photo-wrap {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      margin-bottom: 1.2rem;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.15s forwards;
+    }
+
+    .profile-photo-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--rose), var(--lavender), var(--sage));
+      z-index: 0;
+      animation: spinRing 6s linear infinite;
+    }
+
+    @keyframes spinRing {
+      0%   { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .profile-photo {
+      position: relative;
+      z-index: 1;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+      display: block;
+    }
+
+    /* Fallback placeholder if image not found */
+    .profile-photo-placeholder {
+      position: relative;
+      z-index: 1;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blush), var(--lavender));
+      border: 4px solid white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color: var(--accent);
+    }
+
+    /* ─── SCROLL HINT ───────────────────────────────────── */
+    .scroll-hint {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      opacity: 0.5;
+    }
+    .scroll-hint span {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      0%, 100% { transform: scaleY(1); opacity: 0.5; }
+      50%       { transform: scaleY(0.5); opacity: 0.2; }
+    }
+
+    /* ─── SECTIONS ──────────────────────────────────────── */
+    .section {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+
+    .section-label {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.6rem;
+      color: var(--accent);
+      margin-bottom: 0.2rem;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 2.5rem;
+    }
+
+    /* divider */
+    .divider {
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--rose) 0%, var(--lavender) 50%, var(--sage) 100%);
+      border: none;
+      margin: 0;
+    }
+
+    /* ─── EDUCATION ─────────────────────────────────────── */
+    .edu-card {
+      background: linear-gradient(135deg, #fff8fb 0%, #f3effd 100%);
+      border-radius: 18px;
+      border: 1px solid rgba(197,133,160,0.18);
+      padding: 2rem 2.2rem;
+      box-shadow: 0 4px 30px rgba(197,133,160,0.10);
+    }
+
+    .edu-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .edu-card .school {
+      font-style: italic;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-top: 0.25rem;
+    }
+
+    .edu-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 1rem;
+    }
+
+    .badge {
+      background: linear-gradient(135deg, var(--rose), var(--lavender));
+      border-radius: 999px;
+      padding: 0.3rem 0.9rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .courses {
+      margin-top: 1rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ─── EXPERIENCE ────────────────────────────────────── */
+    .exp-list { display: flex; flex-direction: column; gap: 1.8rem; }
+
+    .exp-card {
+      border-radius: 18px;
+      border: 1px solid rgba(197,133,160,0.15);
+      padding: 1.8rem 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .exp-card:hover {
+      box-shadow: 0 8px 40px rgba(197,133,160,0.18);
+      transform: translateY(-3px);
+    }
+
+    .exp-card.pwc  { background: linear-gradient(135deg, #fff4f7 0%, #fce8ee 100%); }
+    .exp-card.ey1  { background: linear-gradient(135deg, #f5f0fd 0%, #ede5f7 100%); }
+    .exp-card.ey2  { background: linear-gradient(135deg, #f0f8f4 0%, #d8eee5 100%); }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .exp-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .exp-period {
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      padding-top: 0.2rem;
+    }
+
+    .exp-company {
+      font-size: 0.9rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-top: 0.25rem;
+    }
+
+    .exp-location {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .exp-bullets {
+      margin-top: 1rem;
+      padding-left: 1.1rem;
+    }
+
+    .exp-bullets li {
+      font-size: 0.88rem;
+      color: #524560;
+      line-height: 1.75;
+      margin-bottom: 0.45rem;
+      list-style: none;
+      padding-left: 0.3rem;
+      position: relative;
+    }
+
+    .exp-bullets li::before {
+      content: '✦';
+      position: absolute;
+      left: -1rem;
+      color: var(--rose);
+      font-size: 0.6rem;
+      top: 0.35em;
+    }
+
+    /* ─── PROJECTS ──────────────────────────────────────── */
+    .proj-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 1.4rem;
+    }
+
+    .proj-card {
+      border-radius: 16px;
+      padding: 1.5rem 1.6rem;
+      border: 1px solid rgba(197,133,160,0.15);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .proj-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 35px rgba(197,133,160,0.18);
+    }
+
+    .proj-card:nth-child(1) { background: linear-gradient(135deg, #fff4f7, #f7eeff); }
+    .proj-card:nth-child(2) { background: linear-gradient(135deg, #f0f8f4, #e8f3fd); }
+    .proj-card:nth-child(3) { background: linear-gradient(135deg, #fef5e8, #fde8ee); }
+
+    .proj-period {
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .proj-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.35;
+      margin-bottom: 0.8rem;
+    }
+
+    .proj-desc {
+      font-size: 0.84rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ─── SKILLS ────────────────────────────────────────── */
+    .skills-section {
+      background: linear-gradient(135deg, #fde8ee 0%, #ede5f7 50%, #d4e8df 100%);
+      padding: 5rem 2rem;
+    }
+
+    .skills-inner { max-width: 860px; margin: 0 auto; }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.6rem;
+      margin-top: 2.5rem;
+    }
+
+    @media (max-width: 540px) { .skills-grid { grid-template-columns: 1fr; } }
+
+    .skill-block {
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.7);
+      padding: 1.5rem 1.7rem;
+    }
+
+    .skill-block h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .skill-tag {
+      background: rgba(255,255,255,0.8);
+      border: 1px solid rgba(197,133,160,0.3);
+      border-radius: 8px;
+      padding: 0.3rem 0.75rem;
+      font-size: 0.8rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* ─── FOOTER ────────────────────────────────────────── */
+    footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.4rem;
+      color: var(--muted);
+      background: var(--cream);
+    }
+
+    /* ─── NAV ───────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 1.2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      display: flex;
+      gap: 0.3rem;
+      background: rgba(255,255,255,0.5);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(197,133,160,0.2);
+      border-radius: 999px;
+      padding: 0.4rem 0.7rem;
+    }
+
+    nav a {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      letter-spacing: 0.04em;
+      transition: background 0.2s, color 0.2s;
+    }
+    nav a:hover {
+      background: rgba(197,133,160,0.15);
+      color: var(--accent);
+    }
+
+    /* ─── APPEAR ON SCROLL ──────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#ski-app">Ski App</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="about">
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+
+    <div class="profile-photo-wrap">
+      <img
+        class="profile-photo"
+        src="Assets/ProfilePic2.jpeg"
+        alt="Chenxi Xie"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+      />
+      <div class="profile-photo-placeholder" style="display:none;">C</div>
+    </div>
+
+    <p class="hero-tag">Hello, I'm</p>
+    <h1>Chenxi Xie</h1>
+
+    <p class="hero-sub">Accounting · ESG · Data Analytics</p>
+
+    <div class="hero-pills">
+      <span class="pill">Rutgers Business School</span>
+      <span class="pill">GPA 3.73 · Dean's List</span>
+      <span class="pill">Expected May 2026</span>
+    </div>
+
+    <div class="contact-row">
+      <a href="mailto:xiechenxi345@gmail.com">xiechenxi345@gmail.com</a>
+      <a href="tel:+16174604303">(+1) 617-460-4303</a>
+    </div>
+
+
+    <!-- ── FEATURED SKI APP BUTTON CARD ── -->
+    <div class="featured-app-card" id="ski-app">
+      <div class="featured-app-content">
+        <p class="featured-app-kicker">Featured Interactive Project</p>
+        <h2 class="featured-app-title">Ski Outfit Matcher</h2>
+        <p class="featured-app-desc">
+          A product recommendation app that matches users with ski jackets, pants, skis, helmets, goggles, and base layers based on height, weight, skill level, ski style, color preference, and budget.
+        </p>
+
+        <div class="featured-app-actions">
+          <a class="featured-app-btn" href="ski.html" target="_blank" rel="noopener noreferrer">
+            Try the App →
+          </a>
+        </div>
+
+        <div class="featured-app-tags">
+          <span class="featured-app-tag">HTML</span>
+          <span class="featured-app-tag">CSS</span>
+          <span class="featured-app-tag">JavaScript</span>
+          <span class="featured-app-tag">JSON</span>
+          <span class="featured-app-tag">Product Matching</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ── EDUCATION ── -->
+  <section class="section" id="education">
+    <div class="reveal">
+      <p class="section-label">Education</p>
+      <h2 class="section-title">Academic Background</h2>
+    </div>
+    <div class="reveal edu-card">
+      <h3>Bachelor of Science in Accounting</h3>
+      <p class="school">Rutgers Business School · Rutgers, The State University of New Jersey · New Brunswick, NJ</p>
+      <div class="edu-meta">
+        <span class="badge">Sep 2022 – May 2026</span>
+        <span class="badge">GPA 3.73 / 4.0</span>
+        <span class="badge">Dean's List</span>
+      </div>
+      <p class="courses"><strong>Core Courses:</strong> Managerial Accounting · Financial Accounting · Intermediate Accounting · Calculus · Financial Management</p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ── EXPERIENCE ── -->
+  <section class="section" id="experience">
+    <div class="reveal">
+      <p class="section-label">Experience</p>
+      <h2 class="section-title">Professional Journey</h2>
+    </div>
+
+    <div class="exp-list">
+
+      <!-- PwC -->
+      <div class="reveal exp-card pwc">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">Research Intern</div>
+            <div class="exp-company">PricewaterhouseCoopers Zhong Tian LLP</div>
+            <div class="exp-location">Shanghai, China</div>
+          </div>
+          <span class="exp-period">May 2025 – Aug 2025</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Created a standardized ESG research report template for steel-sector listed companies, adopted as PwC's proprietary Sustainable Investment Toolkit for internal ESG assessments.</li>
+          <li>Audited ESG-related financial data from financial statements and MD&A sections, covering green capex, environmental provisions, carbon tax liabilities, and sustainability-linked borrowing costs.</li>
+          <li>Extracted over 210,000 raw disclosure data points from annual reports and CCDC bond prospectuses using Python, building an ESG dataset covering 63 A-share listed steel companies.</li>
+          <li>Visualized correlations between ESG metrics and financial indicators (ROE, operating leverage, asset turnover) using Tableau and regression plots to evaluate long-term investment attractiveness.</li>
+        </ul>
+      </div>
+
+      <!-- EY ESG -->
+      <div class="reveal exp-card ey1">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">ESG Consultant Intern</div>
+            <div class="exp-company">Ernst & Young Hua Ming LLP</div>
+            <div class="exp-location">Guangzhou, China</div>
+          </div>
+          <span class="exp-period">May 2024 – Aug 2024</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Revised ESG disclosure reports for one of China's largest electrical appliance manufacturers to align with GRI and SASB standards.</li>
+          <li>Identified 5+ misclassified sustainability-linked costs totaling over $3 million through variance analysis and cross-checking of annual and segmental reports.</li>
+          <li>Compiled 20,000+ entries on carbon emissions policies across 5 Southern Chinese cities, extracting 10 ESG benchmarking metrics.</li>
+          <li>Built an interactive Tableau dashboard with emission-hotspot scatter plots and trend line charts, presented to 12 stakeholders across compliance, operations, and finance teams.</li>
+        </ul>
+      </div>
+
+      <!-- EY Audit -->
+      <div class="reveal exp-card ey2">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">Audit and Compliance Intern</div>
+            <div class="exp-company">Ernst & Young Hua Ming LLP</div>
+            <div class="exp-location">Guangzhou, China</div>
+          </div>
+          <span class="exp-period">May 2023 – Aug 2023</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Managed allocation and performance evaluation of 6.04 million CNY in medical rectification subsidies across seven public hospitals, achieving a 93% accuracy rate in fund disbursement.</li>
+          <li>Compiled a project performance evaluation report that received an A rating from the Finance Bureau and was recognized as an exemplary departmental case with 100% adoption of proposed improvements.</li>
+          <li>Tracked budget execution, performed variance analysis, and ensured data integrity using PivotTables, VLOOKUP, and regression analysis in Excel.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ── PROJECTS ── -->
+  <section class="section" id="projects">
+    <div class="reveal">
+      <p class="section-label">Projects</p>
+      <h2 class="section-title">Selected Work</h2>
+    </div>
+
+    <div class="proj-grid">
+
+      <div class="reveal proj-card">
+        <p class="proj-period">Jan 2025 – May 2025</p>
+        <p class="proj-name">Equity Risk & Returns Analysis — HKEX</p>
+        <p class="proj-desc">Processed 85 equities, built CART Decision Tree and PCA models in Python (Pandas, Graphviz) to predict returns and capture 90% of market variance.</p>
+      </div>
+
+      <div class="reveal proj-card">
+        <p class="proj-period">Oct 2024 – Dec 2024</p>
+        <p class="proj-name">Bankruptcy Trends & Lawyer Performance</p>
+        <p class="proj-desc">Examined 200+ law firms and 10,000+ fee entries; visualized bankruptcy filing trends and attorney performance metrics in Tableau and Excel Pivot Tables.</p>
+      </div>
+
+      <div class="reveal proj-card">
+        <p class="proj-period">Jan 2024 – May 2024</p>
+        <p class="proj-name">Marginal Profits — New Brunswick Restaurant</p>
+        <p class="proj-desc">Led a team of 5 to analyze campus-area restaurants; implemented cost optimizations and pricing strategies yielding an average 15% increase in net profit margins.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ── SKILLS ── -->
+  <section class="skills-section" id="skills">
+    <div class="skills-inner">
+      <div class="reveal">
+        <p class="section-label">Skills</p>
+        <h2 class="section-title">Tools & Credentials</h2>
+      </div>
+
+      <div class="skills-grid">
+        <div class="reveal skill-block">
+          <h4>Technical Skills</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">R</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Excel (VLOOKUP)</span>
+            <span class="skill-tag">Tableau</span>
+            <span class="skill-tag">Power BI</span>
+            <span class="skill-tag">QuickBooks</span>
+          </div>
+        </div>
+        <div class="reveal skill-block">
+          <h4>Certificates</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">JPMorgan Investment Banking Virtual Experience</span>
+            <span class="skill-tag">Bloomberg Market Concepts</span>
+          </div>
+        </div>
+        <div class="reveal skill-block">
+          <h4>Domain Expertise</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">ESG Reporting</span>
+            <span class="skill-tag">Financial Auditing</span>
+            <span class="skill-tag">Data Visualization</span>
+            <span class="skill-tag">Variance Analysis</span>
+            <span class="skill-tag">GRI / SASB Standards</span>
+          </div>
+        </div>
+        <div class="reveal skill-block">
+          <h4>Languages</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">Mandarin Chinese (Native)</span>
+            <span class="skill-tag">English (Professional)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    Crafted with care — Chenxi Xie © 2026
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
