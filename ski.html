@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SlopeFit | Ski Outfit Matcher</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Personalized Ski Outfit Finder</p>
+        <h1>Find your perfect ski setup.</h1>
+        <p class="subtitle">
+          Enter your height, weight, skill level, ski style, and color preference.
+          SlopeFit will suggest a polished outfit and gear direction for your mountain day.
+        </p>
+      </div>
+
+      <div class="hero-card">
+        <span class="snow-dot"></span>
+        <h2>Smart, simple, stylish.</h2>
+        <p>Built for beginners and confident riders who want a clear ski outfit recommendation.</p>
+      </div>
+    </section>
+
+    <section class="app-shell">
+      <form id="matchForm" class="form-card">
+        <h2>Your Profile</h2>
+
+        <div class="grid">
+          <label>
+            Height
+            <input id="height" type="number" min="120" max="220" placeholder="165" required />
+            <span>cm</span>
+          </label>
+
+          <label>
+            Weight
+            <input id="weight" type="number" min="30" max="150" placeholder="48" required />
+            <span>kg</span>
+          </label>
+        </div>
+
+        <label>
+          Skill Level
+          <select id="level" required>
+            <option value="">Select one</option>
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Non-beginner / Intermediate</option>
+            <option value="advanced">Advanced</option>
+          </select>
+        </label>
+
+        <label>
+          Main Ski Type
+          <select id="skiType" required>
+            <option value="">Select one</option>
+            <option value="groomer">Groomed runs / resort skiing</option>
+            <option value="powder">Powder / soft snow</option>
+            <option value="park">Park / freestyle</option>
+            <option value="allMountain">All-mountain</option>
+          </select>
+        </label>
+
+        <label>
+          Favorite Color Style
+          <select id="color" required>
+            <option value="">Select one</option>
+            <option value="white">Clean white / ivory</option>
+            <option value="black">Black / charcoal</option>
+            <option value="blue">Icy blue / navy</option>
+            <option value="pink">Soft pink / rose</option>
+            <option value="earth">Beige / olive / brown</option>
+          </select>
+        </label>
+
+        <button type="submit">Generate Outfit</button>
+      </form>
+
+      <section id="result" class="result-card hidden">
+        <p class="eyebrow">Your Match</p>
+        <h2 id="resultTitle"></h2>
+        <p id="resultSummary"></p>
+
+        <div class="recommendation-list">
+          <div><h3>Jacket</h3><p id="jacket"></p></div>
+          <div><h3>Pants</h3><p id="pants"></p></div>
+          <div><h3>Skis / Board Direction</h3><p id="ski"></p></div>
+          <div><h3>Fit Note</h3><p id="fitNote"></p></div>
+        </div>
+
+        <p id="styleTip" class="style-tip"></p>
+      </section>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
