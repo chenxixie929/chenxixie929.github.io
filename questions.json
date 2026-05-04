@@ -1,0 +1,454 @@
+{
+  "skiTypeLabels": {
+    "groomer": "groomed resort skiing",
+    "powder": "powder and soft snow",
+    "park": "park and freestyle riding",
+    "allMountain": "all-mountain skiing"
+  },
+  "styleGuides": {
+    "white": {
+      "title": "Alpine Ivory",
+      "label": "clean white / ivory",
+      "tip": "Styling note: pair white or ivory outerwear with silver goggles and one soft accent color."
+    },
+    "black": {
+      "title": "Black Diamond Minimal",
+      "label": "black / charcoal",
+      "tip": "Styling note: keep the look sharp with matte black accessories and a smoke lens."
+    },
+    "blue": {
+      "title": "Icy Blue Performance",
+      "label": "icy blue / navy",
+      "tip": "Styling note: blue pieces look clean with white, navy, or chrome accessories."
+    },
+    "pink": {
+      "title": "Soft Rose Snow",
+      "label": "soft pink / rose",
+      "tip": "Styling note: balance pink with black, cream, or grey so the outfit still feels polished."
+    },
+    "earth": {
+      "title": "Nordic Earth Tone",
+      "label": "beige / olive / brown",
+      "tip": "Styling note: earth tones look expensive when paired with simple accessories and warm lens goggles."
+    }
+  },
+  "products": [
+    {
+      "category": "jacket",
+      "categoryLabel": "Ski Jacket",
+      "name": "The North Face Freedom Insulated Jacket - Women's",
+      "brand": "The North Face",
+      "price": "$320",
+      "priceNumber": 320,
+      "bestFor": "Beginner resort",
+      "levels": [
+        "beginner",
+        "intermediate"
+      ],
+      "skiTypes": [
+        "groomer",
+        "allMountain",
+        "all"
+      ],
+      "colors": [
+        "black",
+        "white",
+        "all"
+      ],
+      "budgets": [
+        "value",
+        "balanced"
+      ],
+      "reason": "A warm, easy-to-wear insulated ski jacket for resort days and beginner-friendly comfort.",
+      "link": "https://www.backcountry.com/the-north-face-freedom-insulated-jacket-womens"
+    },
+    {
+      "category": "jacket",
+      "categoryLabel": "Ski Jacket",
+      "name": "Helly Hansen Alphelia LifaLoft Insulated Jacket - Women's",
+      "brand": "Helly Hansen",
+      "price": "$399\u2013$570",
+      "priceNumber": 399,
+      "bestFor": "Premium resort",
+      "levels": [
+        "intermediate",
+        "advanced"
+      ],
+      "skiTypes": [
+        "groomer",
+        "allMountain",
+        "powder"
+      ],
+      "colors": [
+        "white",
+        "blue",
+        "black"
+      ],
+      "budgets": [
+        "balanced",
+        "premium"
+      ],
+      "reason": "A more technical insulated jacket for skiers who want warmth, mobility, and a polished resort look.",
+      "link": "https://www.backcountry.com/b/helly-hansen-alphelia-lifaloft-insulated-jacket-womens"
+    },
+    {
+      "category": "jacket",
+      "categoryLabel": "Ski Jacket",
+      "name": "Helly Hansen Valdisere 3.0 Jacket - Women's",
+      "brand": "Helly Hansen",
+      "price": "$290\u2013$415",
+      "priceNumber": 290,
+      "bestFor": "Stylish all-around",
+      "levels": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ],
+      "skiTypes": [
+        "groomer",
+        "allMountain"
+      ],
+      "colors": [
+        "pink",
+        "white"
+      ],
+      "budgets": [
+        "balanced",
+        "premium"
+      ],
+      "reason": "A clean all-around jacket choice when the user wants a softer, more fashion-forward snow look.",
+      "link": "https://www.backcountry.com/b/helly-hansen-valdisere-3.0-jacket-womens"
+    },
+    {
+      "category": "jacket",
+      "categoryLabel": "Ski Jacket",
+      "name": "Helly Hansen Val D'Isere 2.0 Jacket - Women's",
+      "brand": "Helly Hansen",
+      "price": "$200",
+      "priceNumber": 200,
+      "bestFor": "Earth tone style",
+      "levels": [
+        "beginner",
+        "intermediate"
+      ],
+      "skiTypes": [
+        "groomer",
+        "allMountain"
+      ],
+      "colors": [
+        "earth"
+      ],
+      "budgets": [
+        "value",
+        "balanced"
+      ],
+      "reason": "A warm resort-style jacket option that matches beige, olive, and brown outfit directions.",
+      "link": "https://utahskis.com/products/helly-hansen-womens-val-disere-2-0-jacket-2025"
+    },
+    {
+      "category": "pants",
+      "categoryLabel": "Ski Pants",
+      "name": "The North Face Sally Insulated Pant - Women's",
+      "brand": "The North Face",
+      "price": "$130",
+      "priceNumber": 130,
+      "bestFor": "Value warmth",
+      "levels": [
+        "beginner",
+        "intermediate"
+      ],
+      "skiTypes": [
+        "groomer",
+        "allMountain",
+        "park"
+      ],
+      "colors": [
+        "white",
+        "black",
+        "all"
+      ],
+      "budgets": [
+        "value"
+      ],
+      "reason": "A practical insulated pant choice for warmth without overcomplicating the first ski setup.",
+      "link": "https://www.backcountry.com/the-north-face-sally-insulated-pant-womens"
+    },
+    {
+      "category": "pants",
+      "categoryLabel": "Ski Pants",
+      "name": "Helly Hansen Legendary Insulated Pant - Women's",
+      "brand": "Helly Hansen",
+      "price": "$143\u2013$205",
+      "priceNumber": 143,
+      "bestFor": "Classic resort",
+      "levels": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ],
+      "skiTypes": [
+        "groomer",
+        "allMountain",
+        "powder"
+      ],
+      "colors": [
+        "black",
+        "white",
+        "blue",
+        "earth",
+        "all"
+      ],
+      "budgets": [
+        "value",
+        "balanced",
+        "premium"
+      ],
+      "reason": "A classic waterproof insulated ski pant that works across most resort and all-mountain outfits.",
+      "link": "https://www.backcountry.com/b/helly-hansen-legendary-pant-womens"
+    },
+    {
+      "category": "pants",
+      "categoryLabel": "Ski Pants",
+      "name": "Helly Hansen Alphelia Hi Waist Insulated Pant - Women's",
+      "brand": "Helly Hansen",
+      "price": "$365",
+      "priceNumber": 365,
+      "bestFor": "Premium fit",
+      "levels": [
+        "intermediate",
+        "advanced"
+      ],
+      "skiTypes": [
+        "groomer",
+        "allMountain",
+        "powder"
+      ],
+      "colors": [
+        "black"
+      ],
+      "budgets": [
+        "premium"
+      ],
+      "reason": "A more elevated high-waist pant option for a cleaner silhouette and better coverage.",
+      "link": "https://www.backcountry.com/b/helly-hansen-alphelia-hi-waist-insulated-pant-womens"
+    },
+    {
+      "category": "skis",
+      "categoryLabel": "Skis",
+      "name": "Rossignol Experience 76 Skis with Xpress 10 Bindings",
+      "brand": "Rossignol",
+      "price": "$319\u2013$450",
+      "priceNumber": 319,
+      "bestFor": "Beginner groomer",
+      "levels": [
+        "beginner",
+        "intermediate"
+      ],
+      "skiTypes": [
+        "groomer",
+        "allMountain"
+      ],
+      "colors": [
+        "white",
+        "earth",
+        "all"
+      ],
+      "budgets": [
+        "value",
+        "balanced"
+      ],
+      "reason": "An approachable ski direction for entry-level and intermediate skiers who mainly stay on resort runs.",
+      "link": "https://checkout.skiessentials.com/products/2025-rossignol-experience-76-skis-w-xpress-10-bindings-rrnft02"
+    },
+    {
+      "category": "skis",
+      "categoryLabel": "Skis",
+      "name": "Salomon QST Lux 92 Skis - Women's",
+      "brand": "Salomon",
+      "price": "$439\u2013$600",
+      "priceNumber": 439,
+      "bestFor": "All-mountain",
+      "levels": [
+        "intermediate",
+        "advanced"
+      ],
+      "skiTypes": [
+        "allMountain",
+        "powder"
+      ],
+      "colors": [
+        "blue",
+        "white",
+        "all"
+      ],
+      "budgets": [
+        "balanced",
+        "premium"
+      ],
+      "reason": "A versatile all-mountain ski direction for mixed terrain, soft snow, and skiers who want more room to progress.",
+      "link": "https://shop.countryski.com/products/salomon-qst-lux-92"
+    },
+    {
+      "category": "skis",
+      "categoryLabel": "Skis",
+      "name": "Salomon QST 94 Women's Skis",
+      "brand": "Salomon",
+      "price": "$560",
+      "priceNumber": 560,
+      "bestFor": "Advanced all-mountain",
+      "levels": [
+        "advanced"
+      ],
+      "skiTypes": [
+        "allMountain",
+        "powder"
+      ],
+      "colors": [
+        "blue"
+      ],
+      "budgets": [
+        "premium"
+      ],
+      "reason": "A stronger all-mountain ski option for confident skiers who want performance across changing snow.",
+      "link": "https://utahskis.com/products/0195751971713-0195751971737-0195751971744-blue-hardgoods-l47774600-season-2026-ski-women-skis-with-bindings-no-skis-waist-width-85-95mm-skill-level-intermediate-skill-level-advanced-skis-best-use-all-mountain-skis-rocker-profile-rocker-camber-rocker-gende"
+    },
+    {
+      "category": "skis",
+      "categoryLabel": "Skis",
+      "name": "Line Honey Badger Skis",
+      "brand": "Line",
+      "price": "$399",
+      "priceNumber": 399,
+      "bestFor": "Park / freestyle",
+      "levels": [
+        "intermediate",
+        "advanced"
+      ],
+      "skiTypes": [
+        "park"
+      ],
+      "colors": [
+        "black",
+        "pink",
+        "all"
+      ],
+      "budgets": [
+        "balanced",
+        "premium"
+      ],
+      "reason": "A freestyle-friendly ski direction for park riders who want a playful twin-tip setup.",
+      "link": "https://www.evo.com/skis/line-honey-badger"
+    },
+    {
+      "category": "helmet",
+      "categoryLabel": "Helmet",
+      "name": "Smith Mirage MIPS Helmet - Women's",
+      "brand": "Smith",
+      "price": "$145",
+      "priceNumber": 145,
+      "bestFor": "All levels",
+      "levels": [
+        "beginner",
+        "intermediate",
+        "advanced",
+        "all"
+      ],
+      "skiTypes": [
+        "groomer",
+        "powder",
+        "park",
+        "allMountain",
+        "all"
+      ],
+      "colors": [
+        "black",
+        "white",
+        "blue",
+        "pink",
+        "earth",
+        "all"
+      ],
+      "budgets": [
+        "value",
+        "balanced",
+        "premium"
+      ],
+      "reason": "A clean helmet direction for everyday ski protection and a polished outfit finish.",
+      "link": "https://www.backcountry.com/smith-mirage-mips-helmet-womens"
+    },
+    {
+      "category": "goggles",
+      "categoryLabel": "Goggles",
+      "name": "Smith Squad Goggles",
+      "brand": "Smith",
+      "price": "$120",
+      "priceNumber": 120,
+      "bestFor": "All levels",
+      "levels": [
+        "beginner",
+        "intermediate",
+        "advanced",
+        "all"
+      ],
+      "skiTypes": [
+        "groomer",
+        "powder",
+        "park",
+        "allMountain",
+        "all"
+      ],
+      "colors": [
+        "black",
+        "white",
+        "blue",
+        "pink",
+        "earth",
+        "all"
+      ],
+      "budgets": [
+        "value",
+        "balanced",
+        "premium"
+      ],
+      "reason": "A versatile goggle direction that pairs easily with most helmet and outerwear colors.",
+      "link": "https://www.backcountry.com/smith-squad-goggles"
+    },
+    {
+      "category": "baseLayer",
+      "categoryLabel": "Base Layer",
+      "name": "Smartwool Classic Thermal Merino Base Layer",
+      "brand": "Smartwool",
+      "price": "$115",
+      "priceNumber": 115,
+      "bestFor": "Warm layering",
+      "levels": [
+        "beginner",
+        "intermediate",
+        "advanced",
+        "all"
+      ],
+      "skiTypes": [
+        "groomer",
+        "powder",
+        "park",
+        "allMountain",
+        "all"
+      ],
+      "colors": [
+        "black",
+        "white",
+        "blue",
+        "pink",
+        "earth",
+        "all"
+      ],
+      "budgets": [
+        "value",
+        "balanced",
+        "premium"
+      ],
+      "reason": "A strong layering choice because warmth and moisture control matter under any ski outfit.",
+      "link": "https://www.smartwool.com/shop/womens-merino-250-base-layer-crew-sw016373"
+    }
+  ]
+}
